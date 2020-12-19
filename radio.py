@@ -14,9 +14,9 @@ async def streaming():
 	sdr.center_freq = freq
 	sdr.bandwidth = bandwidth
 	sdr.freq_correction = 50 #PPM
-	sdr.gain = 'auto'
+	sdr.gain = 25#'auto'
 
-	volume = 0.02 #multiplier
+	volume = 50 #multiplier
 	sound_decimate = int(sample_rate/44100)
 	sound_sample_rate = sample_rate/sound_decimate
 	audio = sd.OutputStream(channels=1,samplerate=sound_sample_rate)
