@@ -1,0 +1,28 @@
+### program folder
+cd /usr/src
+
+### find gsm signals
+kal -s GSM900
+grgsm_scanner -b GSM900 -v
+### decode gsm
+grgsm_livemon -f 931.8M -g 40
+grgsm_livemon -f 933.6M -g 40
+grgsm_livemon -f 935.2M -g 40
+grgsm_livemon -f 944.8M -g 40
+-----
+grgsm_livemon -f 936.2M -g 40
+grgsm_livemon -f 942.8M -g 40
+grgsm_livemon -f 935.6M -g 40
+grgsm_livemon -f 934.0M -g 40
+### IMSI
+sudo python3 /usr/src/IMSI-catcher/simple_IMSI-catcher.py --sniff
+cd /usr/src/gsmevil2/
+sudo rm /database/database.db
+python3 /usr/src/gsmevil2/GsmEvil.py
+### inspect traffic
+sudo wireshark -k -f udp -Y gsmtap -i lo
+
+### capture and decode
+cd /home/live/Desktop/
+grgsm_capture raw.txt -f 931.8M -g 30
+grgsm_decode -c raw.txt -v >> decoded.txt
