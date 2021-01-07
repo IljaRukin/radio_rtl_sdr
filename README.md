@@ -2,10 +2,10 @@
 experiments with radio signal modulation and decoding
 
 ## radio.py
-is a script to play radio in real time using a rtl sdr stick.
+is a script to play fm radio in real time using a rtl sdr stick.
 
 ## radio_advanced.py
-i tried different filters, most of them are not used and commented out in the python script.
+i tried different filters to improve sound quality, most of them are not used and commented out in the python script.
 at the end the best result was achieved with specified gain (not auto), a simple low pass and an offset correction by a moving window.
 
 ## gsm.py
@@ -16,7 +16,7 @@ unfortunately the calculation is quite slow, hence the script is not suitable fo
 describes the most important modulation types (amplitude,phase,frequency,qam) and has simple implementations to decode them
 
 ## decode_radio.ipynb
-has step by step visualizations of how the radio decoding is done
+has step by step visualizations of how the fm radio decoding is done
 
 ## decode_gsm.ipynb
 overview and first steps to decode gsm mobile signals including a simulation.
